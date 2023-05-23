@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<AssemblyName>Notify-SMS</AssemblyName>
+		<Authors>Anthony Colmenares</Authors>
+		<Product>Notify-SMS</Product>
+		<Description>Servicio para recepcion de SMS por API</Description>
+		<Copyright>(c) 2023</Copyright>
+		<Version>1.0.0</Version>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Notify-SMS</RootNamespace>
+		<LangVersion>preview</LangVersion>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="6.1.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
+	</ItemGroup>
+
+</Project>

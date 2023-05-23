@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "0988da04-67ed-4d52-a218-d91acac1fb3a",
+		"name": "Masiv",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19548606"
+	},
+	"item": [
+		{
+			"name": "SMS",
+			"item": [
+				{
+					"name": "Example URL Request",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{BASIC_PASSWORD}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{BASIC_USER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \r\n       \"to\": \"573047891234\",\r\n       \"text\": \"Mensaje de prueba, esta es una url: SHORTURL\",\r\n       \"customdata\": \"CUS_ID_0125\",\r\n       \"isPremium\": false,\r\n       \"isFlash\": false,\r\n       \"isLongmessage\": false,\r\n       \"isRandomRoute\": false,\r\n       \"shortUrlConfig\": {\r\n              \"url\": \"https://www.youtube.com\",\r\n              \"domainShorturl\": \"http://ma.sv/\"\r\n       }\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-sms.masivapp.com/send-message",
+							"protocol": "https",
+							"host": [
+								"api-sms",
+								"masivapp",
+								"com"
+							],
+							"path": [
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "Envío de html fijo para todos los destinatarios",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{BASIC_PASSWORD}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{BASIC_USER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Subject\": \"Mail Subject\",\r\n  \"From\": \"Contact<contact@domain.com>\",\r\n  \"Template\": {\r\n    \"Type\": \"text/html\",\r\n    \"Value\": \"<img src='{{EMAIL_CONTENT_IMAGE_URL}}'><h1>{{EMAIL_CONTENT_TEXT}}</h1><button>{{EMAIL_CONTENT_BUTTON_TEXT}}</button>\"\r\n  },\r\n  \"ReplyTo\": \"support@domain.com\",\r\n  \"Recipients\": [\r\n    {\r\n      \"To\": \"Juan Andrade<cliente1@domain.com>\"\r\n    },\r\n    {\r\n      \"To\": \"Diana<cliente2@domain.com>\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.masiv.masivian.com/email/v1/delivery",
+							"protocol": "https",
+							"host": [
+								"api",
+								"masiv",
+								"masivian",
+								"com"
+							],
+							"path": [
+								"email",
+								"v1",
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{BASIC_PASSWORD}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{BASIC_USER}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASIC_USER",
+			"value": "example",
+			"type": "string"
+		},
+		{
+			"key": "BASIC_PASSWORD",
+			"value": "example123",
+			"type": "string"
+		},
+		{
+			"key": "EMAIL_CONTENT_IMAGE_URL",
+			"value": "https://masiv.com/wp-content/uploads/2022/10/MicrosoftTeams-image-7-1.png",
+			"type": "string"
+		},
+		{
+			"key": "EMAIL_CONTENT_TEXT",
+			"value": "example text for send in the email",
+			"type": "string"
+		},
+		{
+			"key": "EMAIL_CONTENT_BUTTON_TEXT",
+			"value": "send",
+			"type": "string"
+		}
+	]
+}

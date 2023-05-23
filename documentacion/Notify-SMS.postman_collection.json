@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "bafdfde0-29be-4c77-89a3-f90a06951819",
+		"name": "Notify-SMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19548606"
+	},
+	"item": [
+		{
+			"name": "Get SMS Notification",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create SMS Notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientPhoneNumber\": \"+573xxxxxxxxx\",\r\n    \"username\": \"example username\",\r\n    \"message\": \"example message\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/send-notification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"send-notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete SMS Notification",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/delete-notification/{{notifyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"delete-notification",
+						"{{notifyId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "notifyId",
+			"value": "744eb9ec-1a61-4811-a47c-a733773d5407",
+			"type": "string"
+		}
+	]
+}
